@@ -18,6 +18,8 @@
 # limitations under the License.
 #
 
+include_recipe 'build-essential::default'
+
 apt_repository 'thumbor' do
   uri           'http://ppa.launchpad.net/thumbor/ppa/ubuntu'
   distribution  node['lsb']['codename']
@@ -45,9 +47,7 @@ libatlas-base-dev
 gfortran
 liblapack-dev
 libblas-dev
-build-essential
 checkinstall
-git
 pkg-config
 cmake
 libpng12-0
@@ -118,11 +118,9 @@ libgtk2.0-dev
 gtk2-engines-pixbuf
 python-numpy
 python-opencv
-redis-server
 libgraphicsmagick++1-dev
 libgraphicsmagick++3
 libboost-python-dev
-tree
 webp
 libwebp-dev
 python-dateutil
@@ -222,11 +220,6 @@ file '/etc/thumbor.key' do
   owner  'root'
   group  'root'
   mode   '0644'
-  notifies :restart, 'service[thumbor]'
-end
-
-python_pip 'git+git://github.com/zanui/thumbor_aws.git@webp' do
-  action :install
   notifies :restart, 'service[thumbor]'
 end
 

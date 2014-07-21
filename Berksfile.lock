@@ -1,43 +1,48 @@
-{
-  "sources": {
-    "thumbor": {
-      "path": "."
-    },
-    "minitest-handler": {
-      "locked_version": "1.1.4"
-    },
-    "thumbor_test": {
-      "path": "./test/cookbooks/thumbor_test"
-    },
-    "apt": {
-      "locked_version": "2.3.0"
-    },
-    "python": {
-      "locked_version": "1.4.4"
-    },
-    "build-essential": {
-      "locked_version": "1.4.2"
-    },
-    "yum": {
-      "locked_version": "2.4.4"
-    },
-    "nginx": {
-      "locked_version": "2.0.8"
-    },
-    "bluepill": {
-      "locked_version": "2.3.0"
-    },
-    "rsyslog": {
-      "locked_version": "1.9.0"
-    },
-    "ohai": {
-      "locked_version": "1.1.12"
-    },
-    "runit": {
-      "locked_version": "1.4.6"
-    },
-    "chef_handler": {
-      "locked_version": "1.1.4"
-    }
-  }
-}
+DEPENDENCIES
+  minitest-handler
+  thumbor
+    path: .
+    metadata: true
+  thumbor_test
+    path: test/cookbooks/thumbor_test
+
+GRAPH
+  apt (2.4.0)
+  bluepill (2.3.1)
+    rsyslog (>= 0.0.0)
+  build-essential (2.0.4)
+  chef_handler (1.1.6)
+  install_from (3.0.4)
+  metachef (3.0.4)
+  minitest-handler (1.2.0)
+    chef_handler (>= 0.0.0)
+  nginx (2.7.4)
+    apt (~> 2.2)
+    bluepill (~> 2.3)
+    build-essential (~> 2.0)
+    ohai (~> 2.0)
+    runit (~> 1.2)
+    yum-epel (~> 0.3)
+  ohai (2.0.1)
+  python (1.4.6)
+    build-essential (>= 0.0.0)
+    yum-epel (>= 0.0.0)
+  redis (3.0.4)
+    install_from (>= 0.0.0)
+    metachef (>= 0.0.0)
+    runit (>= 0.0.0)
+  rsyslog (1.12.2)
+  runit (1.5.10)
+    build-essential (>= 0.0.0)
+    yum (~> 3.0)
+    yum-epel (>= 0.0.0)
+  thumbor (0.2.0)
+    apt (>= 0.0.0)
+    build-essential (>= 0.0.0)
+    nginx (>= 0.0.0)
+    python (>= 0.0.0)
+    redis (>= 0.0.0)
+  thumbor_test (0.1.0)
+  yum (3.2.2)
+  yum-epel (0.3.6)
+    yum (~> 3.0)

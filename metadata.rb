@@ -8,10 +8,13 @@ version          '0.2.0'
 
 recipe 'thumbor::default', 'Installs thumbor from globocom Private Package Archive (PPA)'
 recipe 'thumbor::source', 'Installs thumbor from GitHub repository'
+recipe 'thumbor::experimental', 'experimental thumbor installs'
 
 depends 'apt'
 depends 'python'
 depends 'nginx'
+depends 'redis'
+depends 'build-essential'
 
 supports 'ubuntu'
 
