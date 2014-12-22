@@ -120,7 +120,6 @@ required_packages = %w(
   gtk2-engines-pixbuf
   python-numpy
   python-opencv
-  redis-server
   libgraphicsmagick++1-dev
   libgraphicsmagick++3
   libboost-python-dev
@@ -132,11 +131,6 @@ required_packages = %w(
 
 required_packages.each do |pkg|
   package pkg
-end
-
-service 'redis-server' do
-  supports :restart => true, :start => true, :stop => true, :reload => true
-  action [:enable, :start]
 end
 
 python_pip "git+git://github.com/globocom/thumbor.git@#{node['thumbor']['version']}" do
