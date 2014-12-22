@@ -1,9 +1,10 @@
 AllCops:
-  Includes:
+  Include:
     - Rakefile
-  Excludes:
-    - vendor/**
-    - test/foodcritic/**
+  Exclude:
+    - vendor/**/*
+    - test/foodcritic/**/*
+    - berks-cookbooks/**/*
 
 AlignParameters:
   Enabled: false

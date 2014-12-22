@@ -1,12 +1,13 @@
 source 'https://rubygems.org'
 
-gem 'berkshelf',   '~> 2.0'
+gem 'berkshelf',  '~> 3.1.4'
 gem 'chefspec',   '~> 3.0'
 gem 'fauxhai'
 gem 'foodcritic', '~> 3.0'
 gem 'rubocop',    '~> 0.15'
 gem 'rake'
 gem 'versionomy'
+gem 'stove'
 
 group :integration do
   gem 'test-kitchen'
